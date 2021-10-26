@@ -20,14 +20,14 @@ Uses the host dbus socket to add avahi cname records.
 
 To run specifying cnames from cli args
 ```
-docker run -d -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
+docker run --privileged -d -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
 rickardcronholm/docker-avahi-alias:latest \
 -s hostname.local hostname2.local hostname3.local ...
 ```
 
 To run specifying cnames from file
 ```
-docker run -d -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
+docker run --privileged -d -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
 -v filename:filename rickardcronholm/docker-avahi-alias:latest \
 -f filename
 ```
